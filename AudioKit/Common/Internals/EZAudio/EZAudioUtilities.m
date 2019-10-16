@@ -309,11 +309,12 @@ BOOL __shouldExitOnCheckResultFail = YES;
     asbd.mBitsPerChannel   = 8 * floatByteSize;
     asbd.mBytesPerFrame    = floatByteSize;
     asbd.mChannelsPerFrame = 2;
-    asbd.mFormatFlags      = kAudioFormatFlagIsFloat|kAudioFormatFlagIsNonInterleaved;
+    //asbd.mFormatFlags      = kAudioFormatFlagIsFloat|kAudioFormatFlagIsNonInterleaved;
     asbd.mFormatID         = kAudioFormatLinearPCM;
     asbd.mFramesPerPacket  = 1;
     asbd.mBytesPerPacket   = asbd.mFramesPerPacket * asbd.mBytesPerFrame;
     asbd.mSampleRate       = sampleRate;
+    asbd.mFormatFlags = kAudioFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger;
     return asbd;
 }
 
